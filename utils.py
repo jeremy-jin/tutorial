@@ -143,3 +143,6 @@ class UnLazyProperty:
 
     def __get__(self, instance, owner):
         return self.value
+
+    def __eq__(self, other):
+        return self.value == other
