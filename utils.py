@@ -140,3 +140,9 @@ class UnLazyProperty:
             for lazy_property in lazy_properties:
                 delattr(instance, lazy_property)
         self.value = value
+
+
+def is_lazy_property(obj, name):
+    """Check if the property is a lazy loading property"""
+    lazy_properties = getattr(obj, LAZY_PROPERTIES_FIELD_NAME, []) or []
+    return name in lazy_properties
