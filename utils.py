@@ -140,3 +140,6 @@ class UnLazyProperty:
             for lazy_property in lazy_properties:
                 delattr(instance, lazy_property)
         self.value = value
+
+    def __get__(self, instance, owner):
+        return self.value
